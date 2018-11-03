@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct 22 14:39:51 2018
+
+@author: Kavitha
+"""
+
+'''
+Exercise: genPrimes
+5.0/5.0 points (graded)
+ESTIMATED TIME TO COMPLETE: 10 minutes
+
+Write a generator, genPrimes, that returns the sequence of prime numbers on successive calls to its next() method: 2, 3, 5, 7, 11, ...
+'''
+
+
+
+def genPrimes():
+    x=2
+    primeList=[]
+    while True:
+        if all([x % prime!=0 for prime in primeList]):
+            primeList.append(x)
+            yield primeList[-1] 
+        elif primeList==[]:
+            primeList.append(x)
+            yield x
+        else:
+            x+=1
+            
+
+
+##Correct
